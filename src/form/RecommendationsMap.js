@@ -8,7 +8,7 @@ import Recommendation from './Recommendation';
 
 const RecommendationsMap = ({ mapRegion, gpsAccuracy, recommendations, lookingFor,
     headerLocation, onRegionChange }) => (
-       
+
         <MapView.Animated region={mapRegion}
             style={styles.fullscreen}
             onRegionChange={onRegionChange}>
@@ -31,8 +31,7 @@ const RecommendationsMap = ({ mapRegion, gpsAccuracy, recommendations, lookingFo
                 fillColor="rgba(66, 180, 230, 1)"
             />
 
-            {recommendations.map(r => <Recommendation {...r} key={'AIzaSyBhZi33GmyB4oImpvXi6YgHi5mLjMXR0Jg'} />)}
-
+            {recommendations.map(r => <Recommendation {...r} key={r.venue.id} />)}
         </MapView.Animated>
     );
 
